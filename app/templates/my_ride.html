@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>My Rides</title>
+
+    <style>
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+        }
+
+        .container {
+            width: 80%;
+            margin: 40px auto;
+        }
+
+        h2 {
+            text-align: center;
+        }
+
+        .ride {
+            background-color: white;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px gray;
+        }
+
+        .ride p {
+            font-size: 16px;
+            margin: 8px 0;
+        }
+
+        .status {
+            font-weight: bold;
+        }
+
+        .no-ride {
+            text-align: center;
+            font-size: 18px;
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+    <div class="container">
+
+        <h2>My Rides</h2>
+
+
+        {% if rides %}
+
+            {% for ride in rides %}
+
+                <div class="ride">
+                    <p>
+                        <strong>Customer:</strong>
+                        {{ride.customer.username}}
+                    </p>
+
+                    <p>
+                        <strong>Pickup:</strong>
+                        {{ ride.pickup_location }}
+                    </p>
+
+                    <p>
+                        <strong>Drop:</strong>
+                        {{ ride.drop_location }}
+                    </p>
+
+                    <p>
+                        <strong>Distance:</strong>
+                        {{ ride.distance }} km
+                    </p>
+
+                    <p>
+                        <strong>Fare:</strong>
+                        ₹{{ ride.fare }}
+                    </p>
+
+                    <p>
+                        <strong>Status:</strong>
+
+                        <span class="status">
+                            {{ ride.status }}
+                        </span>
+
+                    </p>
+
+                    <p>
+                        <strong>Booked On:</strong>
+                        {{ ride.created_at }}
+                    </p>
+
+                </div>
+
+
+            {% endfor %}
+
+        {% else %}
+
+            <p class="no-ride">
+                You have not booked any rides yet.
+            </p>
+
+        {% endif %}
+
+        <a href="{% url 'chome' %}">
+        [<---Back to home]
+    </a>
+
+
+    </div>
+
+</body>
+
+</html>

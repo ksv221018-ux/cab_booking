@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page | Car Cab Booking</title>
+
+    <style>
+        body {
+            margin: 1;
+            font-family: 'Times New Roman', Times, serif;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            padding: 15px 30px;
+            background-color: black;
+            color: white;
+        }
+
+        .logo {
+            font-size: 22px;
+            font-weight: bold;
+        }
+
+        .menu a {
+            color: white;
+            text-decoration: none;
+            margin-left: 25px;
+            font-size: 16px;
+        }
+
+        .menu a:hover {
+            color: yellow;
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav class="navbar">
+
+        <div class="logo">
+            Car Booking App
+        </div>
+
+        <div class="menu">
+            <a href="{% url 'signin' %}">Signin</a>
+            <a href="{% url 'login' %}">Login</a>
+            <a href="{% url 'book_rides' %}">Book Rides</a>
+            <a href="{% url 'myride' %}">My Rides</a>
+            <a href="{% url 'logout' %}">Logout</a>
+        </div>
+
+    </nav>
+
+</body>
+</html>

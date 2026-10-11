@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register Page.</title>
+    <style>
+        .one{
+           width: 350px;
+            margin: 50px auto;
+            padding: 25px;
+            background-color: lightgray;
+            border-radius: 10px;
+        }
+        .two{
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <center>
+
+        <div class="one">
+            <h2>Sign In Form</h2>
+            <form method="post" class="two">
+                {% csrf_token %}
+
+                <label>Username:</label>
+                <br>
+                <input type="text" name="username" placeholder="Username"><br>
+
+                <label>Password:</label><br>
+                <input type="password" name="password" placeholder="password"><br>
+
+                <label>Role:</label><br>
+                <select name="role">
+                    <option value="CUSTOMER">Customer</options>
+                    <option value="DRIVER">Driver</options>
+                </select><br><br>
+
+                <button type="submit">Signin</button>
+            </form>
+            <p>
+                {% if error %}
+                {{error}}
+                {% endif %}
+            </p>
+        </div>
+    </center>
+</body>
+</html>

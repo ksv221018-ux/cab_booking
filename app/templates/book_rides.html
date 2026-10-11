@@ -1,0 +1,31 @@
+<form method="POST">
+
+    {% csrf_token %}
+
+    <label>Pickup:</label>
+
+    <select name="pickup">
+        <option value="">Select Pickup</option>
+        <option value="Chennai">Chennai</option>
+        <option value="Madurai">Madurai</option>
+        <option value="Coimbatore">Coimbatore</option>
+    </select>
+
+    <br><br>
+
+    <label>Drop:</label>
+
+    <select name="drop">
+        <option value="">Select Drop</option>
+        <option value="Chennai">Chennai</option>
+        <option value="Madurai">Madurai</option>
+        <option value="Coimbatore">Coimbatore</option>
+    </select>
+
+    <br><br>
+
+    <button type="submit" name="calculate">
+        Calculate Fare
+    </button>
+
+</form>
